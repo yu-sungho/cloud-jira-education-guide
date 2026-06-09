@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(python3 -c \"import sys,json; d=json.load\\(sys.stdin\\); print\\(d.get\\('tool_response',{}\\).get\\('filePath'\\) or d.get\\('tool_input',{}\\).get\\('file_path',''\\)\\)\")",
+      "mcp__firecrawl__firecrawl_scrape"
+    ]
+  }
+}
