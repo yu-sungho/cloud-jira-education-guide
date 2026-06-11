@@ -1,7 +1,8 @@
 ---
 layout: default
 title: Jira 네비게이션
-parent: Jira 사용법 레슨
+parent: 기초 개념
+grand_parent: Jira 사용법 레슨
 nav_order: 1
 ---
 
