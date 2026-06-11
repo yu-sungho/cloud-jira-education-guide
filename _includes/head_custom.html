@@ -3,7 +3,7 @@
   .jtd-toggle-wrap {
     padding: 0.75rem 1rem 1rem;
   }
-  #jtd-theme-toggle {
+  .jtd-theme-toggle {
     display: block;
     width: 100%;
     padding: 0.6rem 1rem;
@@ -20,7 +20,7 @@
       background 0.15s ease,
       transform 0.15s ease;
   }
-  #jtd-theme-toggle:hover {
+  .jtd-theme-toggle:hover {
     background: #0747a6;
     transform: translateY(-1px);
   }
@@ -220,19 +220,26 @@
       return document.querySelector('link[href*="just-the-docs-"]');
     }
 
+    function updateToggleLabels() {
+      var label = scheme === "dark" ? "☀️ 라이트 모드" : "🌙 다크 모드";
+      document.querySelectorAll(".jtd-theme-toggle").forEach(function (b) {
+        b.textContent = label;
+      });
+    }
+
     function applyScheme(s) {
+      // 라이트는 just-the-docs-light.css, 다크는 just-the-docs-dark.css 사용
+      var file = s === "light" ? "light" : "dark";
       var link = getThemeLink();
       if (link) {
         link.href = link.href.replace(
           /just-the-docs-(dark|light|default)\.css/,
-          "just-the-docs-" + s + ".css",
+          "just-the-docs-" + file + ".css",
         );
       }
       localStorage.setItem("jtd-color-scheme", s);
       scheme = s;
-      var btn = document.getElementById("jtd-theme-toggle");
-      if (btn)
-        btn.textContent = s === "dark" ? "☀️ 라이트 모드" : "🌙 다크 모드";
+      updateToggleLabels();
     }
 
     // 사이드바 모든 메뉴 항목을 항상 펼친 상태로 유지
@@ -249,15 +256,14 @@
 
     document.addEventListener("DOMContentLoaded", function () {
       if (scheme !== "dark") applyScheme(scheme);
+      updateToggleLabels();
 
-      // 사이드바에 정적으로 박힌 토글 버튼에 핸들러 연결
-      var btn = document.getElementById("jtd-theme-toggle");
-      if (btn) {
-        btn.textContent = scheme === "dark" ? "☀️ 라이트 모드" : "🌙 다크 모드";
-        btn.addEventListener("click", function () {
+      // 모든 토글 버튼(사이드바 + 모바일 푸터)에 핸들러 연결
+      document.querySelectorAll(".jtd-theme-toggle").forEach(function (b) {
+        b.addEventListener("click", function () {
           applyScheme(scheme === "dark" ? "light" : "dark");
         });
-      }
+      });
 
       // just-the-docs.js 초기화 직후 한 번 더 강제 펼침
       expandAllNav();
