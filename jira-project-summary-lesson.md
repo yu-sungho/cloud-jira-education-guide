@@ -1,3 +1,9 @@
+---
+layout: default
+title: 프로젝트 요약 뷰
+nav_order: 9
+---
+
 # Jira 프로젝트 요약 뷰 활용하기
 
 ## Visualize your team's work with the Summary view in Jira — Atlassian Community Learning 정리

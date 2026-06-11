@@ -1,3 +1,9 @@
+---
+layout: default
+title: 리스트 뷰
+nav_order: 8
+---
+
 # Jira 리스트 뷰로 업무 우선순위 정하기
 
 ## Prioritize work with the List view in Jira — Atlassian Community Learning 정리

@@ -1,3 +1,9 @@
+---
+layout: default
+title: 워크 아이템 편집
+nav_order: 6
+---
+
 # Jira 워크 아이템 편집하기
 
 ## Update work items in Jira — Atlassian Community Learning 정리

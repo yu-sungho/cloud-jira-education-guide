@@ -1,0 +1,21 @@
+title: Jira Cloud 교육 가이드
+description: Datacenter에서 Cloud로 전환하는 임직원을 위한 Jira 교육 자료
+remote_theme: just-the-docs/just-the-docs@v0.10.0
+
+url: https://yu-sungho.github.io
+baseurl: /cloud-jira-education-guide
+
+lang: ko
+color_scheme: light
+search_enabled: true
+search_tokenizer_separator: /[\s\-/]+/
+
+nav_external_links:
+  - title: GitHub 저장소
+    url: https://github.com/yu-sungho/cloud-jira-education-guide
+
+footer_content: "Jira Cloud 전환 교육 자료 &copy; 2025"
+
+plugins:
+  - jekyll-remote-theme
+  - jekyll-seo-tag

@@ -1,3 +1,9 @@
+---
+layout: default
+title: 타임라인·캘린더 뷰
+nav_order: 10
+---
+
 # Jira 타임라인·캘린더 뷰로 일정 관리하기
 
 ## Schedule work with the Timeline and Calendar views in Jira — Atlassian Community Learning 정리

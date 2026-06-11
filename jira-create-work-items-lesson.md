@@ -1,3 +1,9 @@
+---
+layout: default
+title: 워크 아이템 만들기
+nav_order: 5
+---
+
 # Jira 워크 아이템 만들기
 
 ## Create work items in Jira — Atlassian Community Learning 정리

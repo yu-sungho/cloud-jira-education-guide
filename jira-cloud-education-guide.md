@@ -1,3 +1,9 @@
+---
+layout: default
+title: Jira Cloud 전환 교육 가이드
+nav_order: 2
+---
+
 # Jira Cloud 전환 교육 가이드
 
 ## Datacenter → Cloud 마이그레이션 임직원 필수 학습 자료

@@ -1,3 +1,9 @@
+---
+layout: default
+title: Jira 네비게이션
+nav_order: 4
+---
+
 # Jira 네비게이션 시작하기
 
 ## How to Navigate Jira — Atlassian Community Learning 정리

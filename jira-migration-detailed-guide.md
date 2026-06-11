@@ -1,3 +1,9 @@
+---
+layout: default
+title: 마이그레이션 상세 가이드
+nav_order: 3
+---
+
 # Jira Datacenter → Cloud 마이그레이션 상세 가이드
 
 ## 임직원 & 관리자를 위한 전환 완벽 안내서

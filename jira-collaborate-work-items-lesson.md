@@ -1,3 +1,9 @@
+---
+layout: default
+title: 워크 아이템 협업
+nav_order: 7
+---
+
 # Jira 워크 아이템으로 협업하기
 
 ## Collaborate on work items in Jira — Atlassian Community Learning 정리
