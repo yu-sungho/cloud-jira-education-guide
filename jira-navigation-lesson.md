@@ -1,7 +1,8 @@
 ---
 layout: default
 title: Jira 네비게이션
-nav_order: 4
+parent: Jira 사용법 레슨
+nav_order: 1
 ---
 
 # Jira 네비게이션 시작하기

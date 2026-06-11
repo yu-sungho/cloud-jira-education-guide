@@ -1,7 +1,8 @@
 ---
 layout: default
 title: Jira Cloud 전환 교육 가이드
-nav_order: 2
+parent: 전환 가이드
+nav_order: 1
 ---
 
 # Jira Cloud 전환 교육 가이드

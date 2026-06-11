@@ -1,7 +1,9 @@
 ---
 layout: default
 title: 리스트 뷰
-nav_order: 8
+parent: 뷰(View) 활용
+grand_parent: Jira 사용법 레슨
+nav_order: 1
 ---
 
 # Jira 리스트 뷰로 업무 우선순위 정하기

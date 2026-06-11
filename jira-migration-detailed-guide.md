@@ -1,7 +1,8 @@
 ---
 layout: default
 title: 마이그레이션 상세 가이드
-nav_order: 3
+parent: 전환 가이드
+nav_order: 2
 ---
 
 # Jira Datacenter → Cloud 마이그레이션 상세 가이드

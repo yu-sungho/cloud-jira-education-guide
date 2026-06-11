@@ -1,7 +1,9 @@
 ---
 layout: default
 title: 타임라인·캘린더 뷰
-nav_order: 10
+parent: 뷰(View) 활용
+grand_parent: Jira 사용법 레슨
+nav_order: 3
 ---
 
 # Jira 타임라인·캘린더 뷰로 일정 관리하기

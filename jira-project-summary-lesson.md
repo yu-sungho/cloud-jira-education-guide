@@ -1,7 +1,9 @@
 ---
 layout: default
 title: 프로젝트 요약 뷰
-nav_order: 9
+parent: 뷰(View) 활용
+grand_parent: Jira 사용법 레슨
+nav_order: 2
 ---
 
 # Jira 프로젝트 요약 뷰 활용하기

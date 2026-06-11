@@ -1,7 +1,9 @@
 ---
 layout: default
-title: 워크 아이템 편집
-nav_order: 6
+title: 편집
+parent: 워크 아이템
+grand_parent: Jira 사용법 레슨
+nav_order: 2
 ---
 
 # Jira 워크 아이템 편집하기

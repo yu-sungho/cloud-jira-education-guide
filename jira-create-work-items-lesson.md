@@ -1,7 +1,9 @@
 ---
 layout: default
-title: 워크 아이템 만들기
-nav_order: 5
+title: 만들기
+parent: 워크 아이템
+grand_parent: Jira 사용법 레슨
+nav_order: 1
 ---
 
 # Jira 워크 아이템 만들기

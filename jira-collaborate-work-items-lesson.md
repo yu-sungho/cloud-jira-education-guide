@@ -1,7 +1,9 @@
 ---
 layout: default
-title: 워크 아이템 협업
-nav_order: 7
+title: 협업
+parent: 워크 아이템
+grand_parent: Jira 사용법 레슨
+nav_order: 3
 ---
 
 # Jira 워크 아이템으로 협업하기
