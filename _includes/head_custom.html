@@ -26,6 +26,166 @@
   .site-nav .nav-list-expander svg {
     transform: rotate(90deg) !important;
   }
+
+  /* ===========================================================
+     랜딩(홈) 디자인 — Atlassian 브랜드풍
+     다크/라이트 모드 양쪽에서 읽히도록 반투명·inherit 기반 설계
+     =========================================================== */
+
+  /* 히어로 */
+  .hero {
+    margin: -1rem -1rem 2.5rem;
+    padding: 3.5rem 2rem 3rem;
+    background: linear-gradient(135deg, #0747a6 0%, #0052cc 45%, #2684ff 100%);
+    border-radius: 0 0 16px 16px;
+    color: #fff;
+    text-align: center;
+  }
+  .hero-badge {
+    display: inline-block;
+    padding: 0.3rem 0.9rem;
+    margin-bottom: 1rem;
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    color: #fff;
+    background: rgba(255, 255, 255, 0.18);
+    border: 1px solid rgba(255, 255, 255, 0.28);
+    border-radius: 999px;
+  }
+  .hero-title {
+    margin: 0.5rem 0 0.75rem !important;
+    font-size: 2.4rem !important;
+    font-weight: 800 !important;
+    line-height: 1.15 !important;
+    color: #fff !important;
+    border: 0 !important;
+  }
+  .hero-subtitle {
+    max-width: 36rem;
+    margin: 0 auto 1.75rem;
+    font-size: 1.05rem;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.92);
+  }
+  .hero-actions {
+    display: flex;
+    gap: 0.75rem;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  .btn-primary,
+  .btn-secondary {
+    display: inline-block;
+    padding: 0.7rem 1.5rem;
+    font-size: 0.95rem;
+    font-weight: 700;
+    border-radius: 8px;
+    text-decoration: none !important;
+    transition:
+      transform 0.15s ease,
+      box-shadow 0.15s ease,
+      background 0.15s ease;
+  }
+  .btn-primary {
+    color: #0052cc !important;
+    background: #fff;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.18);
+  }
+  .btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 22px rgba(0, 0, 0, 0.25);
+  }
+  .btn-secondary {
+    color: #fff !important;
+    background: rgba(255, 255, 255, 0.12);
+    border: 1px solid rgba(255, 255, 255, 0.55);
+  }
+  .btn-secondary:hover {
+    background: rgba(255, 255, 255, 0.22);
+    transform: translateY(-2px);
+  }
+
+  /* 섹션 제목 */
+  .section-title {
+    margin: 2.5rem 0 0.35rem !important;
+    font-size: 1.4rem !important;
+    font-weight: 700 !important;
+    border: 0 !important;
+  }
+  .section-title::before {
+    content: "";
+    display: inline-block;
+    width: 4px;
+    height: 1.05em;
+    margin-right: 0.6rem;
+    vertical-align: -0.15em;
+    background: #0052cc;
+    border-radius: 2px;
+  }
+  .section-desc {
+    margin: 0 0 1.25rem;
+    opacity: 0.7;
+    font-size: 0.95rem;
+  }
+
+  /* 카드 그리드 */
+  .card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 1rem;
+    margin-bottom: 1rem;
+  }
+  .card {
+    display: flex;
+    flex-direction: column;
+    padding: 1.4rem 1.4rem 1.25rem;
+    background: rgba(135, 149, 161, 0.08);
+    border: 1px solid rgba(135, 149, 161, 0.25);
+    border-radius: 12px;
+    text-decoration: none !important;
+    color: inherit !important;
+    transition:
+      transform 0.15s ease,
+      box-shadow 0.15s ease,
+      border-color 0.15s ease;
+  }
+  .card:hover {
+    transform: translateY(-4px);
+    border-color: #2684ff;
+    box-shadow: 0 10px 24px rgba(9, 30, 66, 0.18);
+  }
+  .card-icon {
+    font-size: 1.7rem;
+    line-height: 1;
+    margin-bottom: 0.8rem;
+  }
+  .card h3 {
+    margin: 0 0 0.4rem !important;
+    font-size: 1.05rem !important;
+    font-weight: 700 !important;
+  }
+  .card p {
+    margin: 0 0 1rem;
+    font-size: 0.9rem;
+    line-height: 1.55;
+    opacity: 0.78;
+    flex-grow: 1;
+  }
+  .card-link {
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: #2684ff;
+  }
+
+  @media (max-width: 50rem) {
+    .hero {
+      padding: 2.5rem 1.25rem;
+    }
+    .hero-title {
+      font-size: 1.9rem !important;
+    }
+  }
 </style>
 
 <script>
