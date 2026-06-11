@@ -1,29 +1,28 @@
 <style>
+  /* 사이드바 하단 테마 토글 버튼 (정적 HTML, nav_footer_custom.html) */
+  .jtd-toggle-wrap {
+    padding: 0.75rem 1rem 1rem;
+  }
   #jtd-theme-toggle {
-    position: fixed;
-    bottom: 1.5rem;
-    right: 1.5rem;
-    top: auto;
-    left: auto;
-    z-index: 99999;
+    display: block;
+    width: 100%;
+    padding: 0.6rem 1rem;
     background: #0052cc;
-    border: 1px solid rgba(255, 255, 255, 0.25);
-    border-radius: 999px;
-    padding: 0.65rem 1.2rem;
-    cursor: pointer;
+    color: #ffffff;
+    border: 0;
+    border-radius: 8px;
     font-size: 0.85rem;
     font-weight: 700;
-    color: #ffffff;
-    box-shadow: 0 6px 18px rgba(9, 30, 66, 0.35);
+    cursor: pointer;
+    text-align: center;
+    box-shadow: 0 2px 8px rgba(9, 30, 66, 0.25);
     transition:
-      transform 0.15s ease,
-      box-shadow 0.15s ease,
-      background 0.15s ease;
+      background 0.15s ease,
+      transform 0.15s ease;
   }
   #jtd-theme-toggle:hover {
     background: #0747a6;
-    transform: translateY(-2px);
-    box-shadow: 0 10px 24px rgba(9, 30, 66, 0.45);
+    transform: translateY(-1px);
   }
 
   /* 본문 영역을 더 넓게 사용 */
@@ -251,13 +250,14 @@
     document.addEventListener("DOMContentLoaded", function () {
       if (scheme !== "dark") applyScheme(scheme);
 
-      var btn = document.createElement("button");
-      btn.id = "jtd-theme-toggle";
-      btn.textContent = scheme === "dark" ? "☀️ 라이트 모드" : "🌙 다크 모드";
-      btn.addEventListener("click", function () {
-        applyScheme(scheme === "dark" ? "light" : "dark");
-      });
-      document.body.appendChild(btn);
+      // 사이드바에 정적으로 박힌 토글 버튼에 핸들러 연결
+      var btn = document.getElementById("jtd-theme-toggle");
+      if (btn) {
+        btn.textContent = scheme === "dark" ? "☀️ 라이트 모드" : "🌙 다크 모드";
+        btn.addEventListener("click", function () {
+          applyScheme(scheme === "dark" ? "light" : "dark");
+        });
+      }
 
       // just-the-docs.js 초기화 직후 한 번 더 강제 펼침
       expandAllNav();
