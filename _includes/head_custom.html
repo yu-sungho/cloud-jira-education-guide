@@ -16,6 +16,15 @@
   #jtd-theme-toggle:hover {
     opacity: 0.7;
   }
+
+  /* 사이드바 하위 메뉴를 항상 펼쳐진 상태로 고정 */
+  .site-nav ul.nav-list li.nav-list-item ul.nav-list {
+    display: block !important;
+  }
+  /* 펼침 화살표를 항상 아래(▾) 방향으로 고정 */
+  .site-nav .nav-list-expander svg {
+    transform: rotate(90deg) !important;
+  }
 </style>
 
 <script>
