@@ -6,7 +6,7 @@ url: https://yu-sungho.github.io
 baseurl: /cloud-jira-education-guide
 
 lang: ko
-color_scheme: light
+color_scheme: dark
 search_enabled: true
 search_tokenizer_separator: /[\s\-/]+/
 
