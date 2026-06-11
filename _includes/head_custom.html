@@ -17,8 +17,9 @@
     opacity: 0.7;
   }
 
-  /* 사이드바 하위 메뉴를 항상 펼쳐진 상태로 고정 */
-  .site-nav ul.nav-list li.nav-list-item ul.nav-list {
+  /* 사이드바 하위 메뉴를 항상 펼쳐진 상태로 고정
+     (테마 접힘 규칙 .nav-list-item>.nav-list{display:none} 를 직접 덮어씀) */
+  .site-nav .nav-list .nav-list-item > .nav-list {
     display: block !important;
   }
   /* 펼침 화살표를 항상 아래(▾) 방향으로 고정 */
@@ -50,6 +51,18 @@
         btn.textContent = s === "dark" ? "☀️ 라이트 모드" : "🌙 다크 모드";
     }
 
+    // 사이드바 모든 메뉴 항목을 항상 펼친 상태로 유지
+    function expandAllNav() {
+      var nav = document.getElementById("site-nav");
+      if (!nav) return;
+      nav.querySelectorAll("li.nav-list-item").forEach(function (li) {
+        li.classList.add("active");
+      });
+      nav.querySelectorAll(".nav-list-expander").forEach(function (b) {
+        b.setAttribute("aria-expanded", "true");
+      });
+    }
+
     document.addEventListener("DOMContentLoaded", function () {
       if (scheme !== "dark") applyScheme(scheme);
 
@@ -60,6 +73,17 @@
         applyScheme(scheme === "dark" ? "light" : "dark");
       });
       document.body.appendChild(btn);
+
+      // just-the-docs.js 초기화 직후 한 번 더 강제 펼침
+      expandAllNav();
+      setTimeout(expandAllNav, 100);
+
+      // 펼침 버튼을 눌러 접더라도 즉시 다시 펼침
+      var nav = document.getElementById("site-nav");
+      if (nav)
+        nav.addEventListener("click", function () {
+          setTimeout(expandAllNav, 0);
+        });
     });
   })();
 </script>
