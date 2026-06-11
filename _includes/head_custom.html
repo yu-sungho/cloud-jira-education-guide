@@ -214,32 +214,30 @@
 
 <script>
   (function () {
-    var scheme = localStorage.getItem("jtd-color-scheme") || "dark";
+    // just-the-docs 공식 API(window.jtd.setTheme/getTheme)를 사용해 스킴 전환
+    // 라이트=just-the-docs-light.css, 다크=just-the-docs-dark.css
 
-    function getThemeLink() {
-      return document.querySelector('link[href*="just-the-docs-"]');
+    function isDark() {
+      try {
+        if (window.jtd && jtd.getTheme) return jtd.getTheme() !== "light";
+      } catch (e) {}
+      return true;
     }
 
-    function updateToggleLabels() {
-      var label = scheme === "dark" ? "☀️ 라이트 모드" : "🌙 다크 모드";
+    function updateLabels() {
+      var label = isDark() ? "☀️ 라이트 모드" : "🌙 다크 모드";
       document.querySelectorAll(".jtd-theme-toggle").forEach(function (b) {
         b.textContent = label;
       });
     }
 
-    function applyScheme(s) {
-      // 라이트는 just-the-docs-light.css, 다크는 just-the-docs-dark.css 사용
-      var file = s === "light" ? "light" : "dark";
-      var link = getThemeLink();
-      if (link) {
-        link.href = link.href.replace(
-          /just-the-docs-(dark|light|default)\.css/,
-          "just-the-docs-" + file + ".css",
-        );
-      }
-      localStorage.setItem("jtd-color-scheme", s);
-      scheme = s;
-      updateToggleLabels();
+    function setTheme(t) {
+      // t: "light" | "dark"
+      try {
+        if (window.jtd && jtd.setTheme) jtd.setTheme(t);
+      } catch (e) {}
+      localStorage.setItem("jtd-color-scheme", t);
+      updateLabels();
     }
 
     // 사이드바 모든 메뉴 항목을 항상 펼친 상태로 유지
@@ -254,22 +252,21 @@
       });
     }
 
+    // 클릭은 이벤트 위임으로 처리 → 버튼 개수/렌더 타이밍과 무관하게 항상 동작
+    document.addEventListener("click", function (e) {
+      var btn = e.target.closest(".jtd-theme-toggle");
+      if (!btn) return;
+      e.preventDefault();
+      setTheme(isDark() ? "light" : "dark");
+    });
+
     document.addEventListener("DOMContentLoaded", function () {
-      if (scheme !== "dark") applyScheme(scheme);
-      updateToggleLabels();
+      // 저장된 스킴 적용 (기본 다크)
+      setTheme(localStorage.getItem("jtd-color-scheme") || "dark");
 
-      // 모든 토글 버튼(사이드바 + 모바일 푸터)에 핸들러 연결
-      document.querySelectorAll(".jtd-theme-toggle").forEach(function (b) {
-        b.addEventListener("click", function () {
-          applyScheme(scheme === "dark" ? "light" : "dark");
-        });
-      });
-
-      // just-the-docs.js 초기화 직후 한 번 더 강제 펼침
       expandAllNav();
       setTimeout(expandAllNav, 100);
 
-      // 펼침 버튼을 눌러 접더라도 즉시 다시 펼침
       var nav = document.getElementById("site-nav");
       if (nav)
         nav.addEventListener("click", function () {
