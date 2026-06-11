@@ -1,20 +1,32 @@
 <style>
   #jtd-theme-toggle {
     position: fixed;
-    top: 0.6rem;
+    top: 0.7rem;
     right: 1rem;
     z-index: 9999;
-    background: transparent;
-    border: 1px solid var(--border-color, #555);
-    border-radius: 1rem;
-    padding: 0.3rem 0.85rem;
+    background: rgba(255, 255, 255, 0.95);
+    border: 1px solid rgba(9, 30, 66, 0.15);
+    border-radius: 999px;
+    padding: 0.4rem 0.95rem;
     cursor: pointer;
     font-size: 0.8rem;
-    color: var(--body-text-color, inherit);
-    transition: opacity 0.2s;
+    font-weight: 600;
+    color: #172b4d;
+    box-shadow: 0 2px 8px rgba(9, 30, 66, 0.2);
+    transition:
+      transform 0.15s ease,
+      box-shadow 0.15s ease;
   }
   #jtd-theme-toggle:hover {
-    opacity: 0.7;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(9, 30, 66, 0.28);
+  }
+
+  /* 본문 영역을 더 넓게 사용 */
+  @media (min-width: 50rem) {
+    .main {
+      max-width: 80rem !important;
+    }
   }
 
   /* 사이드바 하위 메뉴를 항상 펼쳐진 상태로 고정
