@@ -1,0 +1,56 @@
+<style>
+  #jtd-theme-toggle {
+    position: fixed;
+    top: 0.6rem;
+    right: 1rem;
+    z-index: 9999;
+    background: transparent;
+    border: 1px solid var(--border-color, #555);
+    border-radius: 1rem;
+    padding: 0.3rem 0.85rem;
+    cursor: pointer;
+    font-size: 0.8rem;
+    color: var(--body-text-color, inherit);
+    transition: opacity 0.2s;
+  }
+  #jtd-theme-toggle:hover {
+    opacity: 0.7;
+  }
+</style>
+
+<script>
+  (function () {
+    var scheme = localStorage.getItem("jtd-color-scheme") || "dark";
+
+    function getThemeLink() {
+      return document.querySelector('link[href*="just-the-docs-"]');
+    }
+
+    function applyScheme(s) {
+      var link = getThemeLink();
+      if (link) {
+        link.href = link.href.replace(
+          /just-the-docs-(dark|light|default)\.css/,
+          "just-the-docs-" + s + ".css",
+        );
+      }
+      localStorage.setItem("jtd-color-scheme", s);
+      scheme = s;
+      var btn = document.getElementById("jtd-theme-toggle");
+      if (btn)
+        btn.textContent = s === "dark" ? "☀️ 라이트 모드" : "🌙 다크 모드";
+    }
+
+    document.addEventListener("DOMContentLoaded", function () {
+      if (scheme !== "dark") applyScheme(scheme);
+
+      var btn = document.createElement("button");
+      btn.id = "jtd-theme-toggle";
+      btn.textContent = scheme === "dark" ? "☀️ 라이트 모드" : "🌙 다크 모드";
+      btn.addEventListener("click", function () {
+        applyScheme(scheme === "dark" ? "light" : "dark");
+      });
+      document.body.appendChild(btn);
+    });
+  })();
+</script>
