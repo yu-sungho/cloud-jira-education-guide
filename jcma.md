@@ -42,6 +42,10 @@ has_children: true
 - **[13. 핵심 요약 및 베스트 프랙티스](./jcma-13-summary-best-practices)** — 반드시 기억할 10가지, 권장 순서
 - **[14. 용어 정리 및 참고 링크](./jcma-14-glossary-links)** — 용어집, 공식 문서·지원 채널
 
+### 부록 (참고 자료)
+
+- **[15. 실전 마이그레이션 예제 (외부 가이드)](./jcma-15-hands-on-example)** — 화면 스크린샷으로 따라하는 실습형 요약 (Software Testing Help)
+
 ---
 
 ## ⭐ 가장 먼저 알아야 할 3가지
