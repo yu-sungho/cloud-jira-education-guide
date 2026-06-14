@@ -30,6 +30,12 @@ nav_order: 1
     <p>마이그레이션 4단계, 앱 전략, 보안·비용 안내 등 13개 챕터의 실행 가이드</p>
     <span class="card-link">자세히 보기 →</span>
   </a>
+  <a class="card" href="./jcma.html">
+    <div class="card-icon">🧰</div>
+    <h3>JCMA 마이그레이션 가이드</h3>
+    <p>Jira Cloud Migration Assistant 공식 문서 기반 — 개념·체크리스트·실행·문제 해결 등 14개 챕터</p>
+    <span class="card-link">자세히 보기 →</span>
+  </a>
 </div>
 
 <h2 class="section-title">기초 개념</h2>
